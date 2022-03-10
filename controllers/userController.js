@@ -32,12 +32,12 @@ module.exports = {
                     message : "Server error occurred"
                   })
                 }
-                let user = new User({
+                let newuser = new User({
                   name,
                   email,
                   password : hash
                 })
-               user.sav()
+                newuser.save()
                     .then(user => {
                       res.status(201).json({
                         message : "User successfully created!",
